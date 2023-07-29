@@ -19,6 +19,12 @@
                 extend: {
                     colors: {
                         clifford: '#da373d',
+                    },
+                    backgroundImage: {
+                        'slide-1-pic': "url('images/banner1.png')",
+                        'slide-2-pic': "url('images/banner2.png')",
+                        'slide-3-pic': "url('images/banner3.png')",
+                        'slide-4-pic': "url('images/banner4.png')",
                     }
                 }
             }
@@ -36,35 +42,42 @@
         .font-lato {
             font-family: 'Lato', sans-serif;
         }
+
+        .slide-1-pic {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0) 10%,
+                    rgba(0, 0, 0, 0.7)), url('images/banner1.png');
+            background-size: cover;
+        }
+
+        .slide-2-pic {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0) 10%,
+                    rgba(0, 0, 0, 0.7)), url('images/banner2.png');
+            background-size: cover;
+        }
+
+        .slide-3-pic {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0) 10%,
+                    rgba(0, 0, 0, 0.7)), url('images/banner3.png');
+            background-size: cover;
+        }
+
+        .slide-4-pic {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0) 10%,
+                    rgba(0, 0, 0, 0.7)), url('images/banner4.png');
+            background-size: cover;
+        }
     </style>
 
 </head>
 
 <body class="font-lato">
 
-    <header class="md:container md:mx-auto">
+    <header class="container mx-auto px-5 md:px-0">
 
         <!-- navbar section -->
-        <nav class="py-12">
+        <nav class="pt-11 md:py-12">
             <div class="navbar rounded-full md:bg-[#F85559] p-0 m-0">
-                <div class="navbar-start md:hidden">
-                    <div class="dropdown">
-                        <label tabindex="0" class="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4 6h16M4 12h8m-8 6h16" />
-                            </svg>
-                        </label>
-                        <ul tabindex="0"
-                            class="menu menu-sm dropdown-content mt-0 z-[1] p-0 shadow bg-base-100 rounded-box">
-                            <li><a>Home</a></li>
-                            <li><a>About Us</a></li>
-                            <li><a>Shop</a></li>
-                            <li><a>All Fruits</a></li>
-                        </ul>
-                    </div>
-                </div>
+
                 <div class="navbar-start hidden lg:flex">
                     <ul class="menu menu-horizontal pl-14 text-lg font-medium text-white">
                         <li><a>Home</a></li>
@@ -74,15 +87,43 @@
                     </ul>
                 </div>
                 <div class="navbar-center p-0 m-0">
-                    <div class="h-14 my-7">
-                        <img class="p-0 m-0 pr-4" src="images/logo.png" alt="">
+                    <div class="h-7 w-7 md:w-14 md:h-14 my-7  mr-1 md:mr-0 md:ml-0">
+                        <img class=" p-0 m-0 md:pr-4" src="images/logo.png" alt="">
                     </div>
-                    <a class="btn btn-ghost normal-case text-4xl font-bold text-[#FFF] p-0 m-0">Fruit Burst</a>
+                    <a
+                        class="btn btn-ghost normal-case text-xl md:text-4xl font-bold text-black md:text-[#FFF] p-0 m-0">Fruit
+                        Burst</a>
                 </div>
-                <div class="hidden md:flex navbar-end pr-12 ">
-                    <div class="form-control">
-                        <input type="text" placeholder="Search here" class="input input-bordered w-24 md:w-auto rounded-full lg:w-[400px] " />
-                        
+                <div class="hidden md:flex navbar-end pr-12 relative">
+                    <div class="form-control flex">
+                        <div>
+                            <input type="text" placeholder="Search here"
+                                class="input input-bordered w-24 md:w-auto rounded-full lg:w-[400px] " />
+                        </div>
+                    </div>
+                    <div class=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 absolute right-14 bottom-3">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="navbar-end md:hidden w-[100%]">
+                    <div class="dropdown">
+                        <label tabindex="0" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </label>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content mt-0 z-[1] p-0 shadow bg-base-100 rounded-box w-24 right-3">
+                            <li><a>Home</a></li>
+                            <li><a>About Us</a></li>
+                            <li><a>Shop</a></li>
+                            <li><a>All Fruits</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -90,7 +131,136 @@
 
         <!-- banner section -->
         <section>
-            
+            <div>
+                <div class="carousel w-full ">
+                    <div id="slide1"
+                        class="carousel-item relative w-full hero slide-1-pic h-[190px] md:h-[600px] rounded-lg md:rounded-none">
+                        <div class="hero-content text-center">
+                            <div class=" absolute md:top-24">
+                                <h1 class="text-2xl md:text-7xl font-extrabold text-white">Exotic tastes at your <br>
+                                    doorstep</h1>
+                                <p class="py-2 md:py-6 text-sm md:text-xl font-medium text-white">We supply highly
+                                    quality organic products
+                                </p>
+                                <button
+                                    class="btn border-0 md:px-7 md:py-5 px-4 py-2 bg-[#F85559] text-white h-full capitalize text-lg md:text-xl font-bold md:font-extrabold">Shop
+                                    Now</button>
+                            </div>
+                            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5
+                                md:left-10 md:right-10 top-1/2  ">
+
+                                <a href="#slide4"
+                                    class="btn :text-xs btn-circle  border-0 text-white bg-black ">❮</a>
+
+                                <a href="#slide2"
+                                    class="btn btn-circle  border-0 text-white bg-black ">❯</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="slide2"
+                        class="carousel-item relative w-full hero slide-2-pic h-[190px] md:h-[600px] rounded-lg md:rounded-none">
+                        <div class="hero-content text-center ">
+                            <div class=" absolute md:top-24">
+                                <h1 class="text-2xl md:text-7xl font-extrabold text-white">Exotic tastes at your <br>
+                                    doorstep</h1>
+                                <p class="py-2 md:py-6 text-sm md:text-xl font-medium text-white">We supply highly
+                                    quality organic products
+                                </p>
+                                <button
+                                    class="btn border-0 md:px-7 md:py-5 px-4 py-2 bg-[#F85559] text-white h-full capitalize text-lg md:text-xl font-bold md:font-extrabold">Shop
+                                    Now</button>
+                            </div>
+                            <div
+                                class="absolute flex justify-between transform -translate-y-1/2 left-10 right-10 top-1/2">
+                                <a href="#slide1"
+                                    class="btn  btn-circle border-0 text-white bg-black">❮</a>
+                                <a href="#slide3"
+                                    class="btn  btn-circle border-0 text-white bg-black ">❯</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="slide3"
+                        class="carousel-item relative w-full hero slide-3-pic h-[190px] md:h-[600px] rounded-lg md:rounded-none">
+                        <div class="hero-content text-center">
+                            <div class=" absolute md:top-24">
+                                <h1 class="text-2xl md:text-7xl font-extrabold text-white">Exotic tastes at your <br>
+                                    doorstep</h1>
+                                <p class="py-2 md:py-6 text-sm md:text-xl font-medium text-white">We supply highly
+                                    quality organic products
+                                </p>
+                                <button
+                                    class="btn border-0 md:px-7 md:py-5 px-4 py-2 bg-[#F85559] text-white h-full capitalize text-lg md:text-xl font-bold md:font-extrabold">Shop
+                                    Now</button>
+                            </div>
+                            <div
+                                class="absolute flex justify-between transform -translate-y-1/2 left-10 right-10 top-1/2">
+                                <a href="#slide2"
+                                    class="btn btn-circle border-0 text-white bg-black">❮</a>
+                                <a href="#slide4"
+                                    class="btn btn-circle border-0 text-white bg-black ">❯</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="slide4"
+                        class="carousel-item relative w-full hero slide-4-pic h-[190px] md:h-[600px] rounded-lg md:rounded-none">
+                        <div class="hero-content text-center">
+                            <div class=" absolute md:top-24">
+                                <h1 class="text-2xl md:text-7xl font-extrabold text-white">Exotic tastes at your <br>
+                                    doorstep</h1>
+                                <p class="py-2 md:py-6 text-sm md:text-xl font-medium text-white">We supply highly
+                                    quality organic products
+                                </p>
+                                <button
+                                    class="btn border-0 md:px-7 md:py-5 px-4 py-2 bg-[#F85559] text-white h-full capitalize text-lg md:text-xl font-bold md:font-extrabold">Shop
+                                    Now</button>
+                            </div>
+                            <div
+                                class="absolute flex justify-between transform -translate-y-1/2 left-10 right-10 top-1/2">
+                                <a href="#slide3"
+                                    class="btn btn-circle border-0 text-white bg-black">❮</a>
+                                <a href="#slide1"
+                                    class="btn btn-circle border-0 text-white bg-black ">❯</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center items-center rounded-lg bg-white px-16 py-12 absolute -bottom-10 left-[250px]">
+                <div class="hidden md:flex ">
+
+                    <div class="flex gap-24">
+                        <div class="space-y-2 ">
+                            <img class="h-28"  src="images/fruit1.png" alt="">
+                            <h6 class="text-xl font-medium text-center">Strawberry</h6>
+                        </div>
+                        <div class="space-y-2 ">
+                            <img class="h-28" src="images/fruit2.png" alt="">
+                            <h6 class="text-xl font-medium text-center">Strawberry</h6>
+                        </div>
+                        <div class="space-y-2 ">
+                            <img class="h-28" src="images/fruit3.png" alt="">
+                            <h6 class="text-xl font-medium text-center">Strawberry</h6>
+                        </div>
+                        <div class="space-y-2 ">
+                            <img class="h-28" src="images/fruit4.png" alt="">
+                            <h6 class="text-xl font-medium text-center">Strawberry</h6>
+                        </div>
+                        <div class="space-y-2 ">
+                            <img class="h-28" src="images/fruit5.png" alt="">
+                            <h6 class="text-xl font-medium text-center">Strawberry</h6>
+                        </div>
+                        <div class="space-y-2 ">
+                            <img class="h-28" src="images/fruit6.png" alt="">
+                            <h6 class="text-xl font-medium text-center">Strawberry</h6>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
         </section>
 
     </header>
